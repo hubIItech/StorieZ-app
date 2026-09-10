@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 text-center">
@@ -8,16 +9,15 @@ export default function Home() {
       <p className="text-zinc-400 text-lg mb-8 max-w-xl">
         Mask your input. Mute your outcome. Log your mementos and track your recovery journey securely.
       </p>
-
       <div className="flex gap-4 flex-wrap justify-center">
-        <Link 
-          href="/timeline" 
+        <Link
+          href="/timeline"
           className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-lg transition-colors"
         >
           My Timeline
         </Link>
-        <Link 
-          href="/profile" 
+        <Link
+          href="/profile"
           className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-medium rounded-lg transition-colors border border-zinc-700"
         >
           Sign In / Profile
