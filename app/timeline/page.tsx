@@ -1,4 +1,4 @@
-'use client' import { useState } ...
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -16,8 +16,8 @@ export default function TimelinePage() {
       id: 1,
       title: 'First Milestone Reached',
       content: 'Logged first memento and completed trajectory setup.',
-      date: '2026-09-01'
-    }
+      date: '2026-09-01',
+    },
   ])
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
@@ -25,14 +25,12 @@ export default function TimelinePage() {
   const handleAddLog = (e: React.FormEvent) => {
     e.preventDefault()
     if (!title.trim() || !content.trim()) return
-
     const newLog: StoryLog = {
       id: Date.now(),
       title,
       content,
-      date: new Date().toISOString().split('T')[0]
+      date: new Date().toISOString().split('T')[0],
     }
-
     setLogs([newLog, ...logs])
     setTitle('')
     setContent('')
@@ -50,7 +48,6 @@ export default function TimelinePage() {
         </Link>
       </div>
 
-      {/* Progress Bar */}
       <div className="border border-zinc-800 rounded-lg p-6 bg-zinc-900/50 mb-8">
         <h2 className="text-xl font-semibold mb-2">Active Trajectory</h2>
         <div className="w-full bg-zinc-800 h-4 rounded-full overflow-hidden">
@@ -59,7 +56,6 @@ export default function TimelinePage() {
         <span className="text-sm text-zinc-400 mt-2 block">82% Recovery Milestone Reached</span>
       </div>
 
-      {/* Interactive Form */}
       <form onSubmit={handleAddLog} className="border border-zinc-800 rounded-lg p-6 bg-zinc-900/50 mb-8">
         <h2 className="text-xl font-semibold mb-4">Log a New Story / Memento</h2>
         <div className="mb-4">
@@ -80,15 +76,11 @@ export default function TimelinePage() {
             className="w-full p-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500"
           />
         </div>
-        <button
-          type="submit"
-          className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 font-medium rounded-lg transition-colors"
-        >
+        <button type="submit" className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 font-medium rounded-lg transition-colors">
           Add to Timeline
         </button>
       </form>
 
-      {/* Story Logs List */}
       <div className="space-y-4">
         <h2 className="text-xl font-semibold mb-2">Story History</h2>
         {logs.map((log) => (
