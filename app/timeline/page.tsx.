@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 export default function TimelinePage() {
   return (
     <main className="min-h-screen bg-black text-white p-8 max-w-5xl mx-auto">
