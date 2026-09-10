@@ -1,4 +1,4 @@
-iimport Link from 'next/link'
+import Link from 'next/link'
 
 export default function TimelinePage() {
   return (
@@ -49,3 +49,4 @@ export default function TimelinePage() {
       </section>
     </main>
   )
+}
